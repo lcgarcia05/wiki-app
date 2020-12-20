@@ -7,16 +7,16 @@ const ArmorSchema = mongoose.Schema({
     buy: String,
     sell: String,
     class: String,
-    defense: String,
+    defense: Number,
     description: String,
     droppedBy: String,
-    itemId: String,
+    itemId: Number,
     itemName: String,
     obtainableBy: String,
     property: String,
     requiredLevel: String,
     usableBy: String,
-    weight: String,
+    weight: Number,
 });
 
 module.exports = mongoose.model("Armor", ArmorSchema);
