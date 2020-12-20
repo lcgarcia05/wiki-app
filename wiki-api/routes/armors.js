@@ -15,6 +15,10 @@ router.get("/", async (req, res) => {
 router.get("/:armorId", async (req, res) => {
     try{
         const armor = await Armor.findOne({itemId: req.params.armorId});
+        // Check when an armor returned a null, Implement how to handle
+        if (armor == null){
+            console.log(armor, "Not found");
+        }
         res.json(armor);
     }catch(err){
         res.json({message:err});

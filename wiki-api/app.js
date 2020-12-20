@@ -21,7 +21,7 @@ app.get('/items', (req, res) => {
 });
 
 // Connect to DB
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true }, () =>
+mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
     console.log("connected to DB!"));
 
 
