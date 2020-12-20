@@ -17,8 +17,8 @@ router.use("/cards", require("./cards"));
 
 // Route for the usables
 
-
 // Route for the misc
+router.use("/miscs", require("./miscs"));
 
 // Route for the eggs
 router.use("/eggs", require("./eggs"));
