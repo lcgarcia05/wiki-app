@@ -8,17 +8,12 @@ app.use(bodyParser.json());
 // Import Routes
 const routes = require("./routes/routes");
 
-app.use("/api", routes);
-
-
 // Routes 
 app.get('/', (req, res) => {
     res.send("We are on home");
 });
 
-app.get('/items', (req, res) => {
-    res.send("We are on items");
-});
+app.use("/api", routes);
 
 // Connect to DB
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true }, () =>

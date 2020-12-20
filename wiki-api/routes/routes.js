@@ -13,6 +13,7 @@ router.use("/weapons", require("./weapons"));
 router.use("/armors", require("./armors"));
 
 // Route for the cards
+router.use("/cards", require("./cards"));
 
 // Route for the usables
 

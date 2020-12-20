@@ -1,3 +1,4 @@
+// Weapons route
 const express = require("express");
 const router = express.Router();
 const Weapon = require("../models/Weapon");
