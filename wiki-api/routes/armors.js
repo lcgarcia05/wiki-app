@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 // GET a specific weapon
 router.get("/:armorId", async (req, res) => {
     try{
-        const armor = await Weapon.findOne({itemId: req.params.armorId});
+        const armor = await Armor.findOne({itemId: req.params.armorId});
         res.json(armor);
     }catch(err){
         res.json({message:err});
