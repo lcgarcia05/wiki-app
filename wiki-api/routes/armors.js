@@ -1,3 +1,4 @@
+// Armors route
 const express = require("express");
 const router = express.Router();
 const Armor = require("../models/Armor");
@@ -11,7 +12,7 @@ router.get("/", async (req, res) => {
     }
 });
 
-// GET a specific weapon
+// GET a specific armor
 router.get("/:armorId", async (req, res) => {
     try{
         const armor = await Armor.findOne({itemId: req.params.armorId});
