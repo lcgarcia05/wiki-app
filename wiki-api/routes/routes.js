@@ -21,6 +21,7 @@ router.use("/cards", require("./cards"));
 // Route for the misc
 
 // Route for the eggs
+router.use("/eggs", require("./eggs"));
 
 // Route for the ammunitions
 
