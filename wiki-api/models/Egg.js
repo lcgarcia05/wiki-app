@@ -11,7 +11,9 @@ const EggSchema = mongoose.Schema({
     obtainableFrom: String,
     sell: String,
     type: String,
-    weight: Number
+    weight: Number,
+    imgSmall: String,
+    imgLarge: String
 });
 
 module.exports = mongoose.model("Egg", EggSchema);

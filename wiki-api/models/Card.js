@@ -11,7 +11,9 @@ const CardSchema = mongoose.Schema({
     obtainableFrom: String,
     presuffix: String,
     sell: String,
-    weight: Number
+    weight: Number,
+    imgSmall: String,
+    imgLarge: String
 });
 
 module.exports = mongoose.model("Card", CardSchema);

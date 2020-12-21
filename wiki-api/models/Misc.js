@@ -13,7 +13,9 @@ const MiscSchema = mongoose.Schema({
     soldBy: String,
     soldByNpcMap: String,
     type: String,
-    weight: Number
+    weight: Number,
+    imgSmall: String,
+    imgLarge: String
 });
 
 // Given a third parameter to specify the collection

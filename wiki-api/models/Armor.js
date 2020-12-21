@@ -17,6 +17,8 @@ const ArmorSchema = mongoose.Schema({
     requiredLevel: String,
     usableBy: String,
     weight: Number,
+    imgSmall: String,
+    imgLarge: String
 });
 
 module.exports = mongoose.model("Armor", ArmorSchema);

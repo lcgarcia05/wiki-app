@@ -16,7 +16,9 @@ const WeaponSchema = mongoose.Schema({
     sell: String,
     slots: String,
     weaponLevel: Number,
-    weight: Number
+    weight: Number,
+    imgSmall: String,
+    imgLarge: String
 });
 
 
