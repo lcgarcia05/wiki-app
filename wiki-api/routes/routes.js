@@ -37,15 +37,4 @@ router.use("/tamings", require("./tamings"))
 router.use("/petarmors", require("./petarmors"))
 
 
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router;

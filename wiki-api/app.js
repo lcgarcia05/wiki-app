@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
     res.send("We are on home");
 });
 
+// For future use: if loading images from a url fails
 app.get('/image/:itemId', (req,res) => {
     const itemId = req.params.itemId
     res.sendFile(__dirname + `/images/${itemId}.gif`)
