@@ -16,6 +16,7 @@ router.use("/armors", require("./armors"));
 router.use("/cards", require("./cards"));
 
 // Route for the usables
+router.use("/usables", require("./usables"))
 
 // Route for the misc
 router.use("/miscs", require("./miscs"));
@@ -24,12 +25,16 @@ router.use("/miscs", require("./miscs"));
 router.use("/eggs", require("./eggs"));
 
 // Route for the ammunitions
+router.use("/ammos", require("./ammos"));
 
 // Route for the healing
+router.use("/healings", require("./healings"))
 
 // Route for the taming items
+router.use("/tamings", require("./tamings"))
 
 // Route fro the pet armors
+router.use("/petarmors", require("./petarmors"))
 
 
 
