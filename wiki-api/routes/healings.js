@@ -13,14 +13,14 @@ router.get("/", async (req, res) => {
 });
 
 // GET a specific Healing
-router.get("/:HealingId", async (req, res) => {
+router.get("/:healingId", async (req, res) => {
     try{
-        const Healing = await Healing.findOne({healingId: req.params.HealingId});
+        const healing = await Healing.findOne({healingId: req.params.healingId});
         // Check when an Healing returned a null, Implement how to handle
-        if (Healing == null){
-            console.log(Healing, "Not found");
+        if (healing == null){
+            console.log(healing, "Not found");
         }
-        res.json(Healing);
+        res.json(healing);
     }catch(err){
         res.json({message:err});
     }

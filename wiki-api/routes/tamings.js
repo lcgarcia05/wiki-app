@@ -15,12 +15,12 @@ router.get("/", async (req, res) => {
 // GET a specific Taming
 router.get("/:TamingId", async (req, res) => {
     try{
-        const Taming = await Taming.findOne({tamingId: req.params.TamingId});
+        const taming = await Taming.findOne({tamingId: req.params.TamingId});
         // Check when an Taming returned a null, Implement how to handle
-        if (Taming == null){
-            console.log(Taming, "Not found");
+        if (taming == null){
+            console.log(taming, "Not found");
         }
-        res.json(Taming);
+        res.json(taming);
     }catch(err){
         res.json({message:err});
     }

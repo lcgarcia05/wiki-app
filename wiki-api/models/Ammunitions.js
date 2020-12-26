@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const AmmunitionsSchema = mongoose.Schema({
     id: String,
-    ammoId: String,
+    ammoId: Number,
     applicableJobs: String,
     attack: Number,
     buy: String,
