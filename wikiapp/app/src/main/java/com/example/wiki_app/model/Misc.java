@@ -1,14 +1,14 @@
-package com.example.wiki_app;
+package com.example.wiki_app.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Armor {
+public class Misc {
+
     @SerializedName("_id")
     private String id;
     private String buy;
-    @SerializedName("class")
+    @SerializedName("type")
     private String itemType;
-    private Integer defense;
     private String description;
     private String droppedBy;
     private String imgLarge;
@@ -17,22 +17,17 @@ public class Armor {
     @SerializedName("name")
     private String itemName;
     private String obtainableFrom;
-    private String property;
-    @SerializedName("reqLvl")
-    private String requiredLevel;
     private String sell;
     private String soldBy;
-    private String soldByLoc;
-    private String usableBy;
+    private String soldByNpcMap;
     private Double weight;
 
     @Override
     public String toString() {
-        return "Armor{" +
+        return "Misc{" +
                 "id='" + id + '\'' +
                 ", buy='" + buy + '\'' +
                 ", itemType='" + itemType + '\'' +
-                ", defense=" + defense +
                 ", description='" + description + '\'' +
                 ", droppedBy='" + droppedBy + '\'' +
                 ", imgLarge='" + imgLarge + '\'' +
@@ -40,12 +35,9 @@ public class Armor {
                 ", itemId=" + itemId +
                 ", itemName='" + itemName + '\'' +
                 ", obtainableFrom='" + obtainableFrom + '\'' +
-                ", property='" + property + '\'' +
-                ", requiredLevel='" + requiredLevel + '\'' +
                 ", sell='" + sell + '\'' +
                 ", soldBy='" + soldBy + '\'' +
-                ", soldByLoc='" + soldByLoc + '\'' +
-                ", usableBy='" + usableBy + '\'' +
+                ", soldByNpcMap='" + soldByNpcMap + '\'' +
                 ", weight=" + weight +
                 '}';
     }
@@ -60,10 +52,6 @@ public class Armor {
 
     public String getItemType() {
         return itemType;
-    }
-
-    public Integer getDefense() {
-        return defense;
     }
 
     public String getDescription() {
@@ -94,14 +82,6 @@ public class Armor {
         return obtainableFrom;
     }
 
-    public String getProperty() {
-        return property;
-    }
-
-    public String getRequiredLevel() {
-        return requiredLevel;
-    }
-
     public String getSell() {
         return sell;
     }
@@ -110,12 +90,8 @@ public class Armor {
         return soldBy;
     }
 
-    public String getSoldByLoc() {
-        return soldByLoc;
-    }
-
-    public String getUsableBy() {
-        return usableBy;
+    public String getSoldByNpcMap() {
+        return soldByNpcMap;
     }
 
     public Double getWeight() {

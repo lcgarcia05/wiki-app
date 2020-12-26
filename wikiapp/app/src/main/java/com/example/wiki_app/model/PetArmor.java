@@ -1,4 +1,4 @@
-package com.example.wiki_app;
+package com.example.wiki_app.model;
 
 import com.google.gson.annotations.SerializedName;
 

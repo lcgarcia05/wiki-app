@@ -1,13 +1,17 @@
-package com.example.wiki_app;
+package com.example.wiki_app.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Usable {
+public class Ammo {
 
-    @SerializedName("_id")
     private String id;
+    @SerializedName("ammoId")
+    private Integer itemId;
+    private Integer attack;
+    @SerializedName("applicableJobs")
+    private String jobs;
     private String buy;
-    @SerializedName("type")
+    @SerializedName("class")
     private String itemType;
     private String description;
     private String droppedBy;
@@ -15,18 +19,22 @@ public class Usable {
     private String imgSmall;
     @SerializedName("name")
     private String itemName;
-    private String sell;
     private String obtainableFrom;
+    private String property;
+    @SerializedName("reqLvl")
+    private String requiredLevel;
+    private String sell;
     private String soldBy;
     private String soldByNpcMap;
-    @SerializedName("usableId")
-    private Integer itemId;
     private Double weight;
 
     @Override
     public String toString() {
-        return "Usable{" +
+        return "Ammo{" +
                 "id='" + id + '\'' +
+                ", itemId=" + itemId +
+                ", attack=" + attack +
+                ", jobs='" + jobs + '\'' +
                 ", buy='" + buy + '\'' +
                 ", itemType='" + itemType + '\'' +
                 ", description='" + description + '\'' +
@@ -34,17 +42,30 @@ public class Usable {
                 ", imgLarge='" + imgLarge + '\'' +
                 ", imgSmall='" + imgSmall + '\'' +
                 ", itemName='" + itemName + '\'' +
-                ", sell='" + sell + '\'' +
                 ", obtainableFrom='" + obtainableFrom + '\'' +
+                ", property='" + property + '\'' +
+                ", requiredLevel='" + requiredLevel + '\'' +
+                ", sell='" + sell + '\'' +
                 ", soldBy='" + soldBy + '\'' +
                 ", soldByNpcMap='" + soldByNpcMap + '\'' +
-                ", itemId=" + itemId +
                 ", weight=" + weight +
                 '}';
     }
 
     public String getId() {
         return id;
+    }
+
+    public Integer getItemId() {
+        return itemId;
+    }
+
+    public Integer getAttack() {
+        return attack;
+    }
+
+    public String getJobs() {
+        return jobs;
     }
 
     public String getBuy() {
@@ -75,12 +96,20 @@ public class Usable {
         return itemName;
     }
 
-    public String getSell() {
-        return sell;
-    }
-
     public String getObtainableFrom() {
         return obtainableFrom;
+    }
+
+    public String getProperty() {
+        return property;
+    }
+
+    public String getRequiredLevel() {
+        return requiredLevel;
+    }
+
+    public String getSell() {
+        return sell;
     }
 
     public String getSoldBy() {
@@ -89,10 +118,6 @@ public class Usable {
 
     public String getSoldByNpcMap() {
         return soldByNpcMap;
-    }
-
-    public Integer getItemId() {
-        return itemId;
     }
 
     public Double getWeight() {
