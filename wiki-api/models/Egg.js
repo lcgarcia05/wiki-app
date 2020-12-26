@@ -16,4 +16,4 @@ const EggSchema = mongoose.Schema({
     imgLarge: String
 });
 
-module.exports = mongoose.model("Egg", EggSchema);
+module.exports = mongoose.model("Egg", EggSchema, "eggs");

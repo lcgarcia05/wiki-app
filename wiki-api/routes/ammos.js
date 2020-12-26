@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 // GET a specific ammos
 router.get("/:ammosId", async (req, res) => {
     try{
-        const ammos = await Ammos.findOne({itemId: req.params.ammosId});
+        const ammos = await Ammos.findOne({ammoId: req.params.ammosId});
         // Check when an ammos returned a null, Implement how to handle
         if (ammos == null){
             console.log(ammos, "Not found");

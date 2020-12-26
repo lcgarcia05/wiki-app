@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
 // GET a specific PetArmor
 router.get("/:PetArmorId", async (req, res) => {
     try{
-        const petArmors = await PetArmor.findOne({PetArmorId: req.params.PetArmorId});
+        const petArmors = await PetArmor.findOne({petArmorId: req.params.PetArmorId});
         // Check when an PetArmor returned a null, Implement how to handle
         if (petArmors == null){
             console.log(petArmors, "Not found");

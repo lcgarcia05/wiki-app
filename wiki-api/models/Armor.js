@@ -21,4 +21,4 @@ const ArmorSchema = mongoose.Schema({
     imgLarge: String
 });
 
-module.exports = mongoose.model("Armor", ArmorSchema);
+module.exports = mongoose.model("Armor", ArmorSchema, "armors");

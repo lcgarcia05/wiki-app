@@ -16,4 +16,4 @@ const CardSchema = mongoose.Schema({
     imgLarge: String
 });
 
-module.exports = mongoose.model("Card", CardSchema);
+module.exports = mongoose.model("Card", CardSchema, "cards");
