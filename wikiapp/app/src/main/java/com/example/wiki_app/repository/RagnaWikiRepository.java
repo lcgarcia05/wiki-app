@@ -26,4 +26,8 @@ public class RagnaWikiRepository {
     public MutableLiveData<List<Weapon>> getWeapons() {
         return ragnaWikiApiClient.getWeapons();
     }
+
+    public void requestWeapons(){
+        ragnaWikiApiClient.requestWeapons();
+    }
 }

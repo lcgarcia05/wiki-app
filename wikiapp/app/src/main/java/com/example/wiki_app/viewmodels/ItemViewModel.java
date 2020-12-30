@@ -20,4 +20,8 @@ public class ItemViewModel extends ViewModel {
     public MutableLiveData<List<Weapon>> getWeapons() {
         return ragnaWikiRepository.getWeapons();
     }
+
+    public void requestWeapons(){
+        ragnaWikiRepository.requestWeapons();
+    }
 }
