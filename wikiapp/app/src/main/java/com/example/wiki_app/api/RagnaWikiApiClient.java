@@ -25,6 +25,7 @@ public class RagnaWikiApiClient {
 
     // Weapon runnable request
     private RequestWeaponRunnable requestWeaponsRunnable;
+
     public static synchronized RagnaWikiApiClient getInstance(){
         if (instance == null){
             instance = new RagnaWikiApiClient();
@@ -45,6 +46,7 @@ public class RagnaWikiApiClient {
             requestWeaponsRunnable = null;
         }
 
+
         requestWeaponsRunnable = new RequestWeaponRunnable();
 
         final Future myHandler = AppExecutors.getInstance().networkIO().submit(requestWeaponsRunnable);
@@ -54,6 +56,7 @@ public class RagnaWikiApiClient {
                 myHandler.cancel(true);
             }
         }, 5000, TimeUnit.MILLISECONDS);
+
     }
 
     private class RequestWeaponRunnable implements Runnable{
@@ -71,11 +74,11 @@ public class RagnaWikiApiClient {
                     return;
                 }
                 if (response.code() == 200){
-                    List<Weapon> list = new ArrayList<>();
+                    List<Weapon> list = new ArrayList<>((List<Weapon>)response.body());
                     weapons.postValue(list);
                 }
                 else{
-                    String error = response.errorBody().string();
+                    String error = response.errorBody().toString();
                     Log.v("Tag", "Error" + error);
                     weapons.postValue(null);
                 }
@@ -85,7 +88,7 @@ public class RagnaWikiApiClient {
             }
         }
 
-        // Request for movies
+        // Request for weapons
         private Call<List<Weapon>> getWeapons(){
             return ApiService.getRagnaWikiApi().getWeapons();
         }
