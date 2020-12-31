@@ -28,19 +28,15 @@ public class MainActivity extends AppCompatActivity {
     private ItemViewModel itemViewModel;
     Button button;
 
-    // RecyclerView
-    private RecyclerView recyclerView;
     private WeaponAdapter weaponAdapter;
-    private RecyclerView.LayoutManager layoutManager;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        button = findViewById(R.id.button_api);
 
-        recyclerView = findViewById(R.id.weaponRecyclerView);
+        // RecyclerView
+        RecyclerView recyclerView = findViewById(R.id.weaponRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
@@ -69,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onChanged(List<Weapon> weapons) {
                 if (weapons != null) {
                     for (Weapon weapon: weapons){
-                        Log.v("Tagy", "Message: " + weapon.getName());
+                        Log.v("Tag", "Message: " + weapon.getName());
 
                         weaponAdapter.setWeapons(weapons);
                     }
@@ -81,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
     private void requestWeapons(){
         itemViewModel.requestWeapons();
     }
-
-
 
 
 //    private void getRetroResponse(){

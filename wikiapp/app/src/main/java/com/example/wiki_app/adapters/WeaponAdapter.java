@@ -32,7 +32,9 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
     public void onBindViewHolder(@NonNull WeaponHolder holder, int position) {
         holder.weaponId.setText(String.valueOf(weapons.get(position).getItemId()));
         holder.weaponName.setText(weapons.get(position).getName());
+        holder.weaponName.append(" ["+ weapons.get(position).getSlots() + "]");
 
+        // Weapon image
         Glide.with(holder.itemView.getContext()).load(weapons.get(position).getImgSmall())
                 .centerCrop().into((holder.weaponImage));
 
@@ -49,10 +51,9 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
     }
 
     public class WeaponHolder extends RecyclerView.ViewHolder {
-        private ImageView weaponImage;
-        private TextView weaponName;
-        private TextView weaponId;
-
+        private final ImageView weaponImage;
+        private final TextView weaponName;
+        private final TextView weaponId;
         public WeaponHolder(@NonNull View itemView) {
             super(itemView);
             weaponImage = itemView.findViewById(R.id.weapon_img);
