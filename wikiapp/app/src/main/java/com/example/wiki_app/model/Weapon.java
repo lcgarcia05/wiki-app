@@ -29,7 +29,10 @@ public class Weapon implements Parcelable {
     private Integer weaponLevel;
     private Double weight;
 
-    public Weapon(String _id, String jobs, String buy, String itemType, String description, String droppedBy, String imgLrg, String imgSmall, Integer itemId, String name, String obtainedFrom, String property, String range, String requiredLevel, String sell, String slots, Integer weaponLevel, Double weight) {
+    public Weapon(String _id, String jobs, String buy, String itemType, String description,
+            String droppedBy, String imgLrg, String imgSmall, Integer itemId, String name,
+            String obtainedFrom, String property, String range, String requiredLevel, String sell,
+            String slots, Integer weaponLevel, Double weight) {
         this._id = _id;
         this.jobs = jobs;
         this.buy = buy;

@@ -11,17 +11,17 @@ import java.util.List;
 
 public class ItemViewModel extends ViewModel {
 
-    private final RagnaWikiRepository ragnaWikiRepository;
+    private RagnaWikiRepository ragnaWikiRepository;
+    private MutableLiveData<List<Weapon>> weapons;
 
-    public ItemViewModel(){
-        ragnaWikiRepository = RagnaWikiRepository.getInstance();
+    public ItemViewModel() {
+        ragnaWikiRepository = new RagnaWikiRepository();
+        weapons = ragnaWikiRepository.getWeapons();
+
     }
 
     public MutableLiveData<List<Weapon>> getWeapons() {
-        return ragnaWikiRepository.getWeapons();
+        return weapons;
     }
 
-    public void requestWeapons(){
-        ragnaWikiRepository.requestWeapons();
-    }
 }
