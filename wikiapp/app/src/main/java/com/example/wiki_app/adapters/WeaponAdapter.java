@@ -3,18 +3,14 @@ package com.example.wiki_app.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.wiki_app.R;
 import com.example.wiki_app.model.Weapon;
-import com.example.wiki_app.utils.CustomGlide;
 import com.example.wiki_app.utils.GlideApp;
 
 import java.util.ArrayList;
@@ -33,7 +29,7 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
     @Override
     public WeaponHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.weapon_item, parent, false);
+                .inflate(R.layout.item, parent, false);
 
         return new WeaponHolder(view, listener);
     }
@@ -47,7 +43,7 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
 
         // Weapon image
         GlideApp.with(holder.itemView.getContext()).load(weapons.get(position).getImgSmall())
-                .centerCrop().into((holder.weaponImage));
+                .centerCrop().placeholder(R.drawable.placeholder_img).into((holder.weaponImage));
 
 
     }
@@ -62,6 +58,13 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
         notifyDataSetChanged();
     }
 
+    public Weapon getSelectedWeapon(int pos){
+        if (weapons != null && weapons.size() > 0){
+            return weapons.get(pos);
+        }
+        return null;
+    }
+
     public class WeaponHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView weaponImage;
         private final TextView weaponName;
@@ -69,9 +72,9 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.WeaponHold
         OnItemListener onItemListener;
         public WeaponHolder(@NonNull View itemView, OnItemListener onItemListener) {
             super(itemView);
-            weaponImage = itemView.findViewById(R.id.weapon_img);
-            weaponName = itemView.findViewById(R.id.weapon_name);
-            weaponId = itemView.findViewById(R.id.weapon_id);
+            weaponImage = itemView.findViewById(R.id.item_img);
+            weaponName = itemView.findViewById(R.id.item_name);
+            weaponId = itemView.findViewById(R.id.item_id);
             this.onItemListener = onItemListener;
 
             itemView.setOnClickListener(this);

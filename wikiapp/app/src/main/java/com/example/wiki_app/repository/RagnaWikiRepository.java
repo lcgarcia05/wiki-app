@@ -47,7 +47,7 @@ public class RagnaWikiRepository {
             @Override
             public void onResponse(Call<List<Armor>> call, Response<List<Armor>> response) {
                 if (response.body() != null){
-                    Log.v("Tag", "Receieved: "+ response.body());
+                    Log.v("Tag", "Received: "+ response.body());
                     data.setValue(response.body());
                 }
             }
