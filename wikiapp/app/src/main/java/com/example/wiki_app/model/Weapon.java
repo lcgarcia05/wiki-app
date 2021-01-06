@@ -15,7 +15,7 @@ public class Weapon implements Parcelable {
     private String itemType;
     private String description;
     private String droppedBy;
-    private String imgLrg;
+    private String imgLarge;
     private String imgSmall;
     private Integer itemId;
     @SerializedName("itemName")
@@ -29,14 +29,17 @@ public class Weapon implements Parcelable {
     private Integer weaponLevel;
     private Double weight;
 
-    public Weapon(String _id, String jobs, String buy, String itemType, String description, String droppedBy, String imgLrg, String imgSmall, Integer itemId, String name, String obtainedFrom, String property, String range, String requiredLevel, String sell, String slots, Integer weaponLevel, Double weight) {
+    public Weapon(String _id, String jobs, String buy, String itemType, String description,
+            String droppedBy, String imgLarge, String imgSmall, Integer itemId, String name,
+            String obtainedFrom, String property, String range, String requiredLevel, String sell,
+            String slots, Integer weaponLevel, Double weight) {
         this._id = _id;
         this.jobs = jobs;
         this.buy = buy;
         this.itemType = itemType;
         this.description = description;
         this.droppedBy = droppedBy;
-        this.imgLrg = imgLrg;
+        this.imgLarge = imgLarge;
         this.imgSmall = imgSmall;
         this.itemId = itemId;
         this.name = name;
@@ -57,7 +60,7 @@ public class Weapon implements Parcelable {
         itemType = in.readString();
         description = in.readString();
         droppedBy = in.readString();
-        imgLrg = in.readString();
+        imgLarge = in.readString();
         imgSmall = in.readString();
         if (in.readByte() == 0) {
             itemId = null;
@@ -104,7 +107,7 @@ public class Weapon implements Parcelable {
                 ", itemType='" + itemType + '\'' +
                 ", description='" + description + '\'' +
                 ", droppedBy='" + droppedBy + '\'' +
-                ", imgLrg='" + imgLrg + '\'' +
+                ", imgLrg='" + imgLarge + '\'' +
                 ", imgSmall='" + imgSmall + '\'' +
                 ", itemId=" + itemId +
                 ", name='" + name + '\'' +
@@ -143,8 +146,8 @@ public class Weapon implements Parcelable {
         return droppedBy;
     }
 
-    public String getImgLrg() {
-        return imgLrg;
+    public String getImgLarge() {
+        return imgLarge;
     }
 
     public String getImgSmall() {
@@ -204,7 +207,7 @@ public class Weapon implements Parcelable {
         dest.writeString(itemType);
         dest.writeString(description);
         dest.writeString(droppedBy);
-        dest.writeString(imgLrg);
+        dest.writeString(imgLarge);
         dest.writeString(imgSmall);
         if (itemId == null) {
             dest.writeByte((byte) 0);

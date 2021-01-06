@@ -3,53 +3,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="4dp"
     app:cardCornerRadius="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_margin="6dp">
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
 
         <ImageView
-            android:id="@+id/weapon_img"
+            android:id="@+id/item_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="6dp"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="7dp"
-            android:padding="2dp" />
-
+            android:padding="2dp"/>
         <TextView
-            android:id="@+id/weapon_name"
+            android:id="@+id/item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="72dp"
-            android:layout_marginLeft="72dp"
-            android:layout_marginTop="4dp"
-            android:text="Weapon name"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="59dp"
+            android:layout_marginTop="3dp"
+            android:text="Weapon Name"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/weapon_id"
+            android:id="@+id/item_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="97dp"
-            android:layout_marginLeft="97dp"
-            android:layout_marginBottom="7dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="26dp"
             android:text="Weapon ID"
             android:textSize="15sp" />
-
 
     </RelativeLayout>
 
